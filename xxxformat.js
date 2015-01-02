@@ -61,7 +61,7 @@
                     dx = -~(dx & 0xFFFF) - 1;
                 }
                 dy = file.getInt16();
-                flags = global.stitchType.trim;
+                flags = global.stitchTypes.trim;
             } else if (b0 === 0x7F) {
                 if(b1 !== 0x17 && b1 != 0x46 && b1 >= 8) {
                     b0 = 0;

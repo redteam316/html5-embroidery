@@ -17,6 +17,14 @@ function handleDragOver(evt) {
     evt.preventDefault();
 }
 
+var button = document.getElementById('btn-download');
+button.addEventListener('click', function (e) {
+	var canvas = document.getElementById('mycanvas');
+    var dataURL = canvas.toDataURL('image/png');
+    button.href = dataURL;
+	button.download = 'asdf.png';
+});
+
 String.prototype.endsWith = function(suffix) {
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
@@ -25,18 +33,20 @@ function displayFileText(filename, evt) {
     var view = new jDataView(evt.target.result, 0, evt.size);
     var pattern = new Pattern();
     filename = filename.toLowerCase();
-    if (filename.endsWith("pes")) {
-        pesRead(view, pattern);
-    } else if (filename.endsWith("pec")) {
-        pecRead(view, pattern);
-    } else if (filename.endsWith("pcs")) {
-        pcsRead(view, pattern);
-    } else if (filename.endsWith("dst")) {
+    if (filename.endsWith("dst")) {
         dstRead(view, pattern);
+	} else if (filename.endsWith("exp")) {            
+        expRead(view, pattern);
     } else if (filename.endsWith("jef")) {
         jefRead(view, pattern);
-    } else if (filename.endsWith("exp")) {            
-        expRead(view, pattern);
+	} else if (filename.endsWith("pcs")) {
+        pcsRead(view, pattern);
+    } else if (filename.endsWith("pec")) {
+        pecRead(view, pattern);
+	} else if (filename.endsWith("pes")) {
+        pesRead(view, pattern);
+	} else if (filename.endsWith("sew")) {
+		sewRead(view, pattern);
     } else if (filename.endsWith("vp3")) {            
         vp3Read(view, pattern);
     } else if (filename.endsWith("xxx")) {            

@@ -137,6 +137,6 @@
     }
 
     global.jefRead = jefRead;
-
+	global.jefColors = colors;
 }(this));
 
