@@ -41,14 +41,16 @@ function displayFileText(filename, evt) {
         exyRead(view, pattern);
     } else if (filename.endsWith("jef")) {
         jefRead(view, pattern);
-	} else if (filename.endsWith("pcs")) {
+    } else if (filename.endsWith("pcs")) {
         pcsRead(view, pattern);
     } else if (filename.endsWith("pec")) {
         pecRead(view, pattern);
-	} else if (filename.endsWith("pes")) {
+    } else if (filename.endsWith("pes")) {
         pesRead(view, pattern);
-	} else if (filename.endsWith("sew")) {
-		sewRead(view, pattern);
+    } else if (filename.endsWith("sew")) {
+        sewRead(view, pattern);
+    } else if (filename.endsWith("tap")) {
+        tapRead(view, pattern);
     } else if (filename.endsWith("vp3")) {            
         vp3Read(view, pattern);
     } else if (filename.endsWith("xxx")) {            
