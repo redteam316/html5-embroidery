@@ -37,6 +37,8 @@ function displayFileText(filename, evt) {
         dstRead(view, pattern);
 	} else if (filename.endsWith("exp")) {            
         expRead(view, pattern);
+    } else if (filename.endsWith("exy")) {            
+        exyRead(view, pattern);
     } else if (filename.endsWith("jef")) {
         jefRead(view, pattern);
 	} else if (filename.endsWith("pcs")) {
