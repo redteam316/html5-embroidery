@@ -37,6 +37,8 @@ function displayFileText(filename, evt) {
         dstRead(view, pattern);
 	} else if (filename.endsWith("exp")) {            
         expRead(view, pattern);
+    } else if (filename.endsWith("exy")) {            
+        exyRead(view, pattern);
     } else if (filename.endsWith("jef")) {
         jefRead(view, pattern);
 	} else if (filename.endsWith("pcs")) {
@@ -51,6 +53,8 @@ function displayFileText(filename, evt) {
         vp3Read(view, pattern);
     } else if (filename.endsWith("xxx")) {            
         xxxRead(view, pattern);
+    } else if (filename.endsWith("zsk") || filename.endsWith("z00")) { //NOTE: zsk format commonly uses z + 2 numbers starting with 00
+        zskRead(view, pattern);
     }
     pattern.moveToPositive();
     pattern.drawShape(document.getElementById('mycanvas'));
